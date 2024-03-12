@@ -1,0 +1,100 @@
+{% extends '../layout/base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+    {% load static %}
+    <div class="navSpace"></div>
+    <div class="title">
+        <h3>SKILLS & TOOLS</h3>
+        <div class="lineHeader"></div>
+    </div>
+    <div class="aboutMe">
+        <div class="rowCol">
+            <h4>CURRENTLY <b>LEARNING</b></h4>
+            {% for skill in skills %}
+                {% if skill.domain == 'Currently Learning' %}
+                    <a href="{{ skill.link }}" target="_blank"><img src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}"></a>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="rowCol tall">
+            <h4>EXPERT <b>IN</b></h4>
+            <div class="languajes">
+                <div class="langRow">
+                    <h5>Front-end</h5>
+                    {% for skill in skills %}
+                        {% if skill.domain == 'Front-end' %}
+                            <a href="{{ skill.link }}" target="_blank"><img src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}"></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="rolangRoww">
+                    <h5>Back-end</h5>
+                    {% for skill in skills %}
+                        {% if skill.domain == 'Back-end' %}
+                            <a href="{{ skill.link }}" target="_blank"><img src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}"></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="langRow">
+                    <h5>Database</h5>
+                    {% for skill in skills %}
+                        {% if skill.domain == 'Database' %}
+                            <a href="{{ skill.link }}" target="_blank"><img src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}"></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="langRow">
+                    <h5>Version control</h5>
+                    {% for skill in 'Version control' %}
+                        {% if skill.domain == 'Front-end' %}
+                            <a href="{{ skill.link }}" target="_blank"><img src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}"></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="langRow">
+                    <h5>Cloud services and platforms</h5>
+                    {% for skill in skills %}
+                        {% if skill.domain == 'Cloud services and platforms' %}
+                            <a href="{{ skill.link }}" target="_blank"><img src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}"></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="langRow">
+                    <h5>Data Analysis</h5>
+                    {% for skill in skills %}
+                        {% if skill.domain == 'Data Analysis' %}
+                            <a href="{{ skill.link }}" target="_blank"><img src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}"></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="langRow">
+                    <h5>API tools</h5>
+                    {% for skill in skills %}
+                        {% if skill.domain == 'API tools' %}
+                            <a href="{{ skill.link }}" target="_blank"><img src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}"></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="langRow">
+                    <h5>Development environments</h5>
+                    {% for skill in skills %}
+                        {% if skill.domain == 'Development environments' %}
+                            <a href="{{ skill.link }}" target="_blank"><img src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}"></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="rowCol">
+            <h4>COMING <b>NEXT</b></h4>
+            {% for skill in skills %}
+                {% if skill.domain == 'Coming Next' %}
+                    <a href="{{ skill.link }}" target="_blank"><img src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}"></a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% include "../components/chatbot.html" %}
+{% endblock content %}

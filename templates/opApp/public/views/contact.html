@@ -1,0 +1,21 @@
+{% extends '../layout/base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+    <div class="navSpace"></div>
+    <div class="title">
+        <h3>CONTACT</h3>
+        <div class="lineHeader"></div>
+    </div>
+    <div class="contactContainer">
+        <h4>WRITE <b>ME</b></h4>
+        <form action="" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                {{ field }}
+            {% endfor %}
+            <div class="contactBtn"><button type="submit">SEND</button></div>
+        </form>
+    </div>
+{% endblock content %}

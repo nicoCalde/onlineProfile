@@ -1,0 +1,41 @@
+{% extends '../layout/base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+    {% load static %}
+    <div class="navSpace"></div>
+    <div class="title">
+        <h3>AWESOME WORKS</h3>
+        <div class="lineHeader"></div>
+    </div>
+    <div class="works">
+        {% for work in works %}
+            <div class="galleryItem">
+                <img src="{{ work.image.url }}" alt="{{ work.title }}">
+                <div class="galleryOverlay">
+                    <h4>{{ work.title }}</h4>
+                    <p>{{ work.description }}</p>
+                    <a href="" class="btnGallery">View Project</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-skills"></p>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="project">
+            </div>
+            <div class="modal-footer">
+                <p id="modal-description"></p>
+                <a id="modal-visit-site" href="" target="_blank">Visit Site <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+    </div>
+    {% include "../components/chatbot.html" %}
+{% endblock content %}

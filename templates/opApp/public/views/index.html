@@ -1,0 +1,25 @@
+{% extends '../layout/base.html' %}
+
+{% block title %}Nico Calde{% endblock title %}
+
+{% block content %}
+    <div class="bannerContent">
+        <h2><b>LET'S</b> BUILD <b>SOMETHING</b> GREAT <b>TOGETHER</b></h2>
+        <p>I'm a Full-Stack Developer based in <a href="https://es.wikipedia.org/wiki/Buenos_Aires" target="_blank">#BuenosAires</a>. Passionate about building intelligent solutions that leverage AI and Data for cutting-edge advancements.</p>
+        <a href="{% url 'opApp:contact'%}" class="btnLetsTalk">LET'S TALK</a>
+    </div>
+    <div class="title">
+        <h3>WHAT I DO</h3>
+        <div class="lineHeader"></div>
+    </div>
+    <div class="skills">
+        {% for skill in skills %}
+            <div class="skill">
+                <div class="fontA"><i class="fa-solid {{ skill.favicon }}"></i></div>
+                <h4>{{ skill.title }} <b>{{ skill.last }}</b></h4>
+                <p>{{ skill.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    {% include "../components/chatbot.html" %}
+{% endblock content %}

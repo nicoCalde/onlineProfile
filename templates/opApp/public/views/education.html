@@ -1,0 +1,27 @@
+{% extends '../layout/base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+    <div class="navSpace"></div>
+    <div class="title">
+        <h3>EDUCATION</h3>
+        <div class="lineHeader"></div>
+    </div>
+    <div class="educationContainer">
+        <h4>MOST <b>RELEVANT</b></h4>
+        {% for degree in education  %}
+            <div class="rowContainer">
+                <div class="establishment">
+                    <p>{{ degree.start }}{% if degree.end > 1 %}-{{ degree.end }}{% elif degree.end == 0 %}{% else %}-in progress{% endif %}</p>
+                    <h6>{{ degree.establishment }}</h6>
+                </div>
+                <div class="subject">
+                    <h5><b>{{ degree.first }}</b> {{ degree.degree }}</h5>
+                    <p>{{ degree.description }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% include "../components/chatbot.html" %}
+{% endblock content %}

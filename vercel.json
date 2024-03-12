@@ -1,0 +1,13 @@
+{
+    "builds": [{
+        "src": "onlineProfile/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "masLambdaSize": "15mb", "runtime": "python3.11"}
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "onlineProfile/wsgi.py"
+        }
+    ]
+}

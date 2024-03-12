@@ -1,0 +1,35 @@
+{% load static %}
+<div class="chatbot">
+    <div class="chat-container">
+        <div class="card flex-grow-1">
+            <div class="chat-header">
+                <div class="card-header bg-primary text-white">Live Chat</div>
+                <i class="fa-solid fa-x fa-xl close-icon" style="color: #ffffff;"></i>
+            </div>
+            <div class="card-body messages-box">
+                <ul class="list-unstyled messages-list">  
+                    <li class="message received">
+                        <div class="message-text bot">
+                            <div class="message-sender">
+                                <b>nicoAI</b>
+                            </div>
+                            <div class="message-content">
+                                Hey there! I'm Nico, and I'm here to chat about anything, whether it's about me or any topic you like. Ask away!
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <form class="message-form">
+            {%csrf_token%}
+            <div class="input-group">
+                <input type="text" class="form-control message-input" placeholder="Type your message...">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary btn-send"><i class="fa-regular fa-paper-plane fa-2xl paper"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <button class="activate-chatbot"><i class="fa-solid fa-comments fa-2xl bubble"></i></button>
+</div>

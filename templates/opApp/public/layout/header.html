@@ -1,0 +1,22 @@
+<header>
+    <nav class="topNav">
+            <a href="{% url 'opApp:index' %}">
+                {% load static %}
+                <img src="{% static '/opApp/img/theme/4x4-idcard.png' %}?v={% now 'U' %}" alt="myFace" id="myPicture">
+                <div class="myPictureContent">
+                    <h1>NICOLAS <b>GONZALEZ CALDERON</b></h1>
+                    <p><b>FULLSTACK</b> DEVELOPER | <b>DATA</b> SCIENTIST | <b>AI</b> SPECIALIST</p>
+                </div>
+            </a>
+            <input type="checkbox" name="menuButton" id="menuButton">
+            <label class="menuIcon" for="menuButton"><span class="navIcon"></span></label>
+            <ul class="menu">
+                <li><a href="{% url 'opApp:index' %}">HOME</a></li>
+                <li><a href="{% url 'opApp:skills' %}">SKILLS</a></li>
+                <li><a href="{% url 'opApp:works'%}">WORKS</a></li>
+                <li><a href="{% url 'opApp:education'%}">EDUCATION</a></li>
+                <li><a href="{% url 'opApp:about'%}">ABOUT</a></li>
+                <li><a href="{% url 'opApp:contact'%}">CONTACT</a></li>
+            </ul>
+    </nav>
+</header>
