@@ -47,8 +47,8 @@
                 </div>
                 <div class="langRow">
                     <h5>Version control</h5>
-                    {% for skill in 'Version control' %}
-                        {% if skill.domain == 'Front-end' %}
+                    {% for skill in skills %}
+                        {% if skill.domain == 'Version control' %}
                             <a href="{{ skill.link }}" target="_blank"><img src="{{ skill.logo.url }}" alt="{{ skill.name }}" title="{{ skill.name }}"></a>
                         {% endif %}
                     {% endfor %}
