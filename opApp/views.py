@@ -68,7 +68,7 @@ def ask_openai(message, context_file):
         with open(context_file, 'r') as file:
             context = file.read()
         response = client.chat.completions.create(
-            model = "gpt-3.5-turbo",
+            model = "gpt-4o-mini",
             messages=[
                 {"role": "system", "content": context},
                 {"role": "user", "content": message},
